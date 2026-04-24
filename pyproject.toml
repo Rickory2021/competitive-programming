@@ -1,0 +1,35 @@
+[project]
+name = "codeforces"
+version = "0.1.0"
+description = "Competitive programming workspace — Codeforces / CSES / LeetCode"
+requires-python = ">=3.10"
+
+# None of these ship with your submissions — they're local dev tools only.
+dependencies = []
+
+[tool.setuptools]
+packages = []  # this is a workspace, not a distributable package
+
+[project.optional-dependencies]
+dev = [
+    "ruff",          # linting + formatting (fast, single tool)
+    "pytest",        # run local stress tests
+    "ipython",       # nicer REPL for experimenting
+]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+
+[tool.ruff.lint]
+# Competitive code is intentionally terse — disable noisy rules.
+select = ["E", "F", "W"]
+ignore = [
+    "E741",   # ambiguous variable names (i, l, O are fine in CP)
+    "F841",   # unused variables (sometimes intentional in CP)
+    "E501",   # line length — doesn't matter in contests
+]
+
+[tool.pytest.ini_options]
+testpaths = ["practice", "contests"]
+python_files = ["test_*.py", "stress_*.py"]

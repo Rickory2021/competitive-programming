@@ -1,0 +1,22 @@
+{
+    // ── CPH (Competitive Programming Helper) ──
+    "cph.general.defaultLanguage": "python",
+    // IMPORTANT: Update this to your actual absolute path
+    "cph.general.defaultLanguageTemplateFileLocation": "/home/rickory/competitive-programming/templates/template.py",
+    "cph.language.python.Command": "python3",
+    "cph.general.timeOut": 5000,
+
+    // ── Python ──
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+
+    // ── Ruff (linting + formatting) ──
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": false
+    },
+
+    // ── Editor preferences for CP ──
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "files.trimTrailingWhitespace": true
+}
