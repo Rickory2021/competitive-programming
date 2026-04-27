@@ -153,11 +153,7 @@ def main():
     CONTESTS_DIR.mkdir(exist_ok=True)
 
     # Find all .py files in root (not in subdirectories)
-    solutions = [
-        f
-        for f in ROOT.iterdir()
-        if f.suffix == ".py" and f.is_file() and f.name not in SKIP
-    ]
+    solutions = [f for f in ROOT.iterdir() if f.suffix == ".py" and f.is_file() and f.name not in SKIP]
 
     if not solutions:
         print("nothing to move")

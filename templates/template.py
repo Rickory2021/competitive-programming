@@ -3,6 +3,7 @@ Problem:  <URL>
 Rating:   <RATING>
 Tags:     <TAGS>
 """
+
 import sys
 from sys import stdin
 from collections import defaultdict, deque, Counter

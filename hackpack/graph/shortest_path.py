@@ -4,6 +4,7 @@ Shortest Path Algorithms
 Dijkstra:      O((V+E) log V)  — non-negative weights only
 Bellman-Ford:  O(V·E)          — handles negative weights, detects negative cycles
 """
+
 from heapq import heappush, heappop
 from math import inf
 

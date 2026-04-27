@@ -3,11 +3,13 @@ Binary Search Patterns
 ──────────────────────
 The two patterns you actually need in contests.
 """
+
 from bisect import bisect_left, bisect_right
 
 
 # ── Pattern 1: Binary search on answer ──
 # "What is the minimum/maximum value X such that check(X) is True?"
+
 
 def binary_search_min(lo, hi, check):
     """Find minimum x in [lo, hi] where check(x) is True.
@@ -36,6 +38,7 @@ def binary_search_max(lo, hi, check):
 
 
 # ── Pattern 2: Binary search on floats ──
+
 
 def binary_search_float(lo, hi, check, eps=1e-9):
     """For continuous domains (geometry, etc.)."""
