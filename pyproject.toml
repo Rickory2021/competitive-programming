@@ -27,8 +27,12 @@ select = ["E", "F", "W"]
 ignore = [
     "E741",   # ambiguous variable names (i, l, O are fine in CP)
     "F841",   # unused variables (sometimes intentional in CP)
-    "E501",   # line length — doesn't matter in contests
+    "F401",   # unused imports (keeping solve/optimized_solve both importable)
 ]
+
+[tool.ruff.lint.per-file-ignores]
+"contests/**" = ["E501"]   # line length doesn't matter in contest solutions
+"practice/**" = ["E501"]   # same for practice
 
 [tool.pytest.ini_options]
 testpaths = ["practice", "contests"]

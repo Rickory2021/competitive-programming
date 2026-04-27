@@ -37,6 +37,11 @@ lint: ## Lint all .py files
 fmt: ## Format all .py files
 	$(BIN)/ruff format .
 
+.PHONY: fix
+fix: ## Format + auto-fix lint issues
+	$(BIN)/ruff format .
+	$(BIN)/ruff check --fix .
+
 .PHONY: stress
 stress: ## Run pytest (stress tests, generators)
 	$(BIN)/pytest -v
