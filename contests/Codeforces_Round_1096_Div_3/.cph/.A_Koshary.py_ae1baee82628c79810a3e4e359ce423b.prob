@@ -1,0 +1,33 @@
+{
+  "name": "A. Koshary",
+  "group": "Codeforces - Codeforces Round 1096 (Div. 3)",
+  "url": "https://codeforces.com/contest/2227/problem/A",
+  "interactive": false,
+  "memoryLimit": 256,
+  "timeLimit": 1000,
+  "tests": [
+    {
+      "id": 1777559710595,
+      "input": "6\n1 1\n1 2\n4 6\n5 9\n7 2\n10 10\n",
+      "output": "NO\nYES\nYES\nNO\nYES\nYES\n"
+    }
+  ],
+  "testType": "single",
+  "input": {
+    "type": "stdin"
+  },
+  "output": {
+    "type": "stdout"
+  },
+  "languages": {
+    "java": {
+      "mainClass": "Main",
+      "taskClass": "AKoshary"
+    }
+  },
+  "batch": {
+    "id": "e204669f-79fc-4f85-b60e-2ef29ae5d24b",
+    "size": 1
+  },
+  "srcPath": "/home/rickory/competitive-programming/contests/Codeforces_Round_1096_Div_3/A_Koshary.py"
+}

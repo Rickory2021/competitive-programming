@@ -1,0 +1,33 @@
+{
+  "name": "B. Party Monster",
+  "group": "Codeforces - Codeforces Round 1096 (Div. 3)",
+  "url": "https://codeforces.com/contest/2227/problem/B",
+  "interactive": false,
+  "memoryLimit": 256,
+  "timeLimit": 2000,
+  "tests": [
+    {
+      "input": "6\n2\n()\n2\n)(\n3\n(((\n6\n())(()\n4\n(()(\n5\n)()()\n",
+      "output": "YES\nYES\nNO\nYES\nNO\nNO\n",
+      "id": 1777559933670
+    }
+  ],
+  "testType": "single",
+  "input": {
+    "type": "stdin"
+  },
+  "output": {
+    "type": "stdout"
+  },
+  "languages": {
+    "java": {
+      "mainClass": "Main",
+      "taskClass": "BPartyMonster"
+    }
+  },
+  "batch": {
+    "id": "6b5caba4-61cf-4864-aa21-6077a22f1a62",
+    "size": 1
+  },
+  "srcPath": "/home/rickory/competitive-programming/contests/Codeforces_Round_1096_Div_3/B_Party_Monster.py"
+}
