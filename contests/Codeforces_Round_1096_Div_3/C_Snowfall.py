@@ -1,7 +1,7 @@
 """
-Problem:  <URL>
+Problem:  https://codeforces.com/problemset/problem/2227/C
 Rating:   <RATING>
-Tags:     <TAGS>
+Tags:     constructive algorithms, math
 """
 
 import sys
@@ -28,13 +28,13 @@ def solve():
         two_mod = num%2==0
         three_mod = num%3==0
         if two_mod and three_mod:
-            double_factor.insert(0,num)
+            double_factor.append(num)
         elif two_mod:
-            two_factor.insert(0,num)
+            two_factor.append(num)
         elif three_mod:
-            three_factor.insert(0,num)
+            three_factor.append(num)
         else:
-            no_factor.insert(0,num)
+            no_factor.append(num)
     ans = []
     ans.extend(double_factor)
     ans.extend(two_factor)
