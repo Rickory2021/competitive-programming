@@ -1,7 +1,7 @@
 """
-Problem:  <URL>
+Problem:  https://codeforces.com/problemset/problem/2227/E
 Rating:   <RATING>
-Tags:     <TAGS>
+Tags:     binary search, data structures, dp, greedy
 """
 
 import sys
@@ -80,11 +80,56 @@ def shift_amount(arr,arr_len):
 
     # for idx in range(len(arr)-2,-1,-1):
 
+def optimized_solve():
+    arr_len = int(input())
+    arr = list(map(int, input().split()))
+    base_shift, min_cascade_arr = optimized_shift_amount(arr,arr_len)
+    # We now know the base shift in general and now we know how many blocks don't get moved
+    # ith that we have to remove one block. What this means with an array of blocks that don't move
+    #  is that since it is min, it never increases.
+    # When it decrases that means that situation, blocks are blocked by a previous block or it is the one
+    # This mean continuous of the same value means that most bang
+    # You can think of it like removing the right most continuous same value and all the left most decrease
+    #  minimium down by one (Hence Big Cascade)
+    max_bundle, bundle_size, bundle_height = -1, -1, -1
+    for col in range(arr_len):
+        cur_val = min_cascade_arr[col]
+        if bundle_height != cur_val:
+            # Reset Slice
+            max_bundle = max(max_bundle, bundle_size)
+            bundle_size=1
+            bundle_height=cur_val
+        else:
+            # Same Slice!
+            bundle_size+=1
+    # Flush out
+    max_bundle = max(max_bundle, bundle_size)
+    # Trim 1 since we have to remove to get best cascade
+    max_bundle -= 1
+    print(max_bundle+base_shift)
+
+def optimized_shift_amount(arr_1d,arr_len):
+    shift = 0
+    min_cascade_arr = [0] * arr_len
+    # Populate first
+    # Get Minimium to cause a cascade
+    min_cascade_height = arr_1d[arr_len-1]
+    min_cascade_arr[arr_len-1] = arr_1d[arr_len-1]
+    # print(range(len(arr)-1))
+    for col in range(arr_len-2,-1,-1):
+        shift+=max(0, arr_1d[col]-min_cascade_height)
+        min_cascade_height = min(min_cascade_height,arr_1d[col])
+        min_cascade_arr[col]=min_cascade_height
+    return shift, min_cascade_arr
+
+
+    # for idx in range(len(arr)-2,-1,-1):
+
 
 def main():
     T = int(input())
     for _ in range(T):
-        solve()
+        optimized_solve()
 
 
 if __name__ == "__main__":
